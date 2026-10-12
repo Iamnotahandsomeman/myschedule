@@ -22,6 +22,8 @@ python -m http.server 8000
 - `manifest.webmanifest`：主屏幕应用配置
 - `service-worker.js`：离线缓存
 - `icon.png` / `icon.svg`：应用图标
+
+
 一、用 GitHub Pages 发布
 1. 创建一个 GitHub 仓库
 在电脑浏览器打开 GitHub 并登录，然后：
