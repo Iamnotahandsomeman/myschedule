@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f5f7fb" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="研究生课表" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icon.png" />
+  <title>课间 · 研究生课表</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{font-family:'DM Sans','Noto Sans SC',sans-serif;color:#17243a;background:#f5f7fb;font-synthesis:none;font-weight:400;font-size:14px;--blue:#3978f6;--ink:#17243a;--muted:#8792a6;--line:#e9edf4;--mint:#ddf5eb;--purple:#eee8ff;--amber:#fff0d7;--rose:#ffe6e5}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% -10%,#e6efff 0,transparent 40%),#f5f7fb}.phone{width:min(100%,430px);min-height:100vh;margin:0 auto;background:#f8f9fc;position:relative;padding:env(safe-area-inset-top) 20px calc(88px + env(safe-area-inset-bottom));overflow:hidden}.status{height:34px;display:flex;justify-content:space-between;align-items:center;padding:0 5px;font-weight:700;font-size:12px}.status-right{display:flex;align-items:center;gap:5px}.signal{font-size:11px;letter-spacing:-3px}.battery{width:19px;height:10px;border:1.5px solid #263248;border-radius:3px;position:relative}.battery:before{content:'';position:absolute;inset:1px 3px 1px 1px;background:#263248;border-radius:1px}.battery:after{content:'';position:absolute;right:-3px;top:2px;width:2px;height:4px;background:#263248;border-radius:0 2px 2px 0}.top{display:flex;justify-content:space-between;align-items:center;margin:14px 1px 20px}.eyebrow{color:#8895a9;font-size:11px;letter-spacing:.09em;font-weight:700;text-transform:uppercase}.title{font-size:25px;font-weight:800;letter-spacing:-.04em;margin:3px 0 0}.avatar{height:42px;width:42px;border-radius:15px;background:#e8efff;color:#3978f6;display:grid;place-items:center;font-weight:800;font-size:15px}.week-card{border-radius:24px;background:#1f4f9d;color:white;padding:19px 19px 17px;box-shadow:0 12px 26px #1f4f9d24;position:relative;overflow:hidden}.week-card:after{content:'';position:absolute;width:140px;height:140px;border-radius:50%;right:-48px;top:-60px;background:#ffffff0d}.week-heading{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1}.week-label{font-size:12px;color:#c7d9fa}.week-number{font-weight:800;font-size:30px;letter-spacing:-.04em;margin-top:2px}.week-number small{font-size:15px;font-weight:600;letter-spacing:0;margin-left:4px}.arrows{display:flex;gap:8px}.arrow{border:1px solid #ffffff38;color:white;background:#ffffff12;border-radius:11px;width:35px;height:35px;font-size:19px;cursor:pointer}.week-foot{display:flex;align-items:center;gap:7px;color:#d9e6ff;font-size:11px;margin-top:10px}.live-dot{height:7px;width:7px;border-radius:50%;background:#67e2af;box-shadow:0 0 0 4px #67e2af24}.section-row{display:flex;justify-content:space-between;align-items:center;margin:25px 2px 12px}.section-title{font-size:16px;font-weight:800}.view-toggle{border-radius:10px;background:#edf0f6;padding:3px;display:flex;gap:2px}.view-toggle button{border:0;background:transparent;color:#8993a4;border-radius:8px;font:600 11px inherit;padding:7px 10px;cursor:pointer}.view-toggle button.active{background:white;color:#263751;box-shadow:0 2px 5px #20304d12}.days{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin:0 0 19px}.day{border:0;background:transparent;border-radius:14px;padding:9px 2px 8px;color:#9aa4b4;cursor:pointer}.day .dow{font-size:11px;font-weight:600}.day .date{display:block;font-size:15px;font-weight:700;margin-top:3px;color:#65738a}.day.active{background:#3978f6;color:white;box-shadow:0 6px 14px #3978f63d}.day.active .date{color:white}.agenda-head{display:flex;align-items:baseline;gap:8px;margin:4px 1px 13px}.agenda-head strong{font-size:18px}.agenda-head span{font-size:11px;color:#929daf}.agenda{display:grid;gap:10px}.course{display:grid;grid-template-columns:54px 1fr;gap:10px;position:relative}.time{padding-top:14px;color:#8a96a9;font-size:10px;line-height:1.4;text-align:left}.time b{display:block;font-size:11px;color:#64748b;font-weight:700}.course-body{border-radius:17px;padding:13px 14px 12px;min-height:80px;position:relative;overflow:hidden;background:white;border:1px solid #edf0f5;box-shadow:0 3px 10px #26375106}.course-body:before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent,#3978f6)}.course-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}.course h3{font-size:14px;line-height:1.35;margin:0;font-weight:700;color:#23334d}.room{white-space:nowrap;border-radius:8px;background:#f3f6fb;padding:5px 7px;font-size:10px;font-weight:700;color:#53647d}.meta{font-size:11px;color:#8591a4;margin-top:7px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}.meta .dot{width:3px;height:3px;border-radius:50%;background:#b6c0cf}.pill{font-size:9px;font-weight:700;color:#64748b;background:#f2f4f8;padding:3px 6px;border-radius:6px}.empty{background:white;border:1px dashed #dce3ed;border-radius:18px;padding:24px 15px;text-align:center;color:#8995a8;font-size:12px}.empty b{display:block;font-size:14px;color:#455671;margin-bottom:6px}.week-view{display:none;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}.week-view.show{display:grid}.week-col{min-width:0}.week-col h4{font-size:10px;color:#68768b;text-align:center;margin:0 0 8px}.week-col h4 span{display:block;font-size:9px;color:#a2acba;margin-top:2px}.mini{border-radius:10px;padding:7px 5px;margin-bottom:6px;background:#e9f0ff;border-left:3px solid #3978f6;min-height:54px}.mini:nth-child(3n){background:#e6f6ef;border-color:#35ad7a}.mini:nth-child(3n+1){background:#fff2df;border-color:#efa83e}.mini b{display:block;font-size:9px;line-height:1.35;color:#34445e;overflow-wrap:anywhere}.mini small{display:block;font-size:8px;color:#748198;margin-top:5px}.bottom{position:fixed;z-index:5;bottom:0;left:50%;transform:translateX(-50%);width:min(100%,430px);padding:11px 28px calc(12px + env(safe-area-inset-bottom));height:75px;background:#fffffff0;backdrop-filter:blur(15px);border-top:1px solid #e9edf4;display:flex;justify-content:space-around}.nav{border:0;background:transparent;color:#a0aabc;font:600 10px inherit;display:grid;justify-items:center;gap:4px;min-width:55px;cursor:pointer}.nav span{font-size:19px;line-height:20px}.nav.active{color:#3978f6}.hint{text-align:center;color:#a3acba;font-size:10px;margin:16px 0 0}.toast{position:fixed;z-index:10;bottom:93px;left:50%;transform:translate(-50%,8px);background:#263751;color:white;border-radius:12px;padding:10px 15px;font-size:12px;opacity:0;transition:.2s;pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}
+    @media(min-width:600px){body{padding:28px 0}.phone{min-height:844px;border-radius:34px;box-shadow:0 20px 70px #17243a22}.bottom{bottom:28px;border-radius:0 0 34px 34px}.status{padding-top:2px}}
+  </style>
+</head>
+<body>
+  <main class="phone">
+    <div class="status"><span>9:41</span><div class="status-right"><span class="signal">▂▄▆</span><span>◖</span><span class="battery"></span></div></div>
+    <header class="top"><div><div class="eyebrow">MY CAMPUS · 本学期</div><h1 class="title">研究生课表</h1></div><div class="avatar">AI</div></header>
+    <section class="week-card" aria-label="当前周次"><div class="week-heading"><div><div class="week-label">当前教学周</div><div class="week-number"><span id="weekNum">7</span><small>周</small></div></div><div class="arrows"><button class="arrow" id="prev" aria-label="上一周">‹</button><button class="arrow" id="next" aria-label="下一周">›</button></div></div><div class="week-foot"><i class="live-dot"></i><span id="weekNote">本周课程已为你筛选 · 第 7 周</span></div></section>
+    <div class="section-row"><div class="section-title">我的安排</div><div class="view-toggle"><button class="active" id="dayMode">日视图</button><button id="weekMode">周视图</button></div></div>
+    <nav class="days" id="days" aria-label="选择星期"></nav>
+    <section id="dayPanel"><div class="agenda-head"><strong id="dayTitle">星期一</strong><span id="courseCount"></span></div><div class="agenda" id="agenda"></div></section>
+    <section class="week-view" id="weekView" aria-label="本周课程概览"></section>
+    <p class="hint">课程安排根据提供的研究生课表整理</p>
+    <nav class="bottom"><button class="nav active"><span>▦</span>课表</button><button class="nav" id="todayNav"><span>◷</span>今天</button><button class="nav" id="remindNav"><span>♧</span>提醒</button><button class="nav" id="mineNav"><span>◎</span>我的</button></nav>
+    <div class="toast" id="toast"></div>
+  </main>
+<script>
+  const courses=[
+    {d:0,start:1,end:2,title:'丰满1班',weeks:[2,9],teacher:'刘玥珂',room:'9-207',color:'#3978f6'},
+    {d:0,start:3,end:4,title:'数字通信技术',weeks:[5,7],teacher:'张慧颖',room:'荟智楼524',color:'#35ad7a'},
+    {d:0,start:5,end:6,title:'机器学习原理',weeks:[2,13],teacher:'王威娜',room:'荟智楼524',color:'#efa83e'},
+    {d:1,start:1,end:4,title:'数理统计与随机过程',weeks:[2,9],teacher:'刘杰操',room:'荟智楼524',color:'#8c70e8'},
+    {d:1,start:5,end:6,title:'专业外语',weeks:[2,9],teacher:'赵旭',room:'荟智楼524',color:'#ef8b72'},
+    {d:1,start:9,end:12,title:'丰满1班',weeks:[2,9],teacher:'王辉',room:'9-214',color:'#3978f6'},
+    {d:2,start:3,end:4,title:'深度学习模型实践',weeks:[2,13],teacher:'范良松',room:'荟智楼524',color:'#8c70e8'},
+    {d:2,start:7,end:8,title:'数字图像处理与机器视觉',weeks:[2,13],teacher:'杨明',room:'荟智楼524',color:'#35ad7a'},
+    {d:3,start:3,end:4,title:'机器学习原理',weeks:[2,5],teacher:'王威娜',room:'荟智楼524',color:'#efa83e'},
+    {d:3,start:5,end:8,title:'学术道德与科学规范',weeks:[4,7],teacher:'孔楠楠',room:'荟智楼524',color:'#ef8b72'},
+    {d:4,start:1,end:2,title:'安全培训',weeks:[2,9],teacher:'郑建明',room:'荟智楼524',color:'#efa83e'},
+    {d:4,start:3,end:4,title:'数字通信技术',weeks:[5,7],teacher:'张慧颖',room:'荟智楼524',color:'#35ad7a'},
+    {d:4,start:5,end:6,title:'英语丰满1班',weeks:[2,17],teacher:'李涛',room:'9-301',color:'#3978f6'},
+    {d:4,start:7,end:8,title:'数字图像处理与机器视觉',weeks:[2,5],teacher:'杨明',room:'荟智楼524',color:'#8c70e8'}
+  ];
+  const weekdays=['星期一','星期二','星期三','星期四','星期五'], shortDays=['周一','周二','周三','周四','周五'];
+  // 根据当前日期自动定位教学周。按用户提供的“2026-10-12 是第 7 周”推算，第一周周一为 2026-08-31。
+  const termWeekOne = new Date(2026, 7, 31);
+  function currentTeachingWeek(){
+    const today = new Date(); today.setHours(0,0,0,0);
+    const firstDay = new Date(termWeekOne); firstDay.setHours(0,0,0,0);
+    return Math.max(1, Math.min(20, Math.floor((today-firstDay)/604800000)+1));
+  }
+  let week=currentTeachingWeek(), selected=0, mode='day';
+  const active=()=>courses.filter(c=>week>=c.weeks[0]&&week<=c.weeks[1]);
+  const timeLabel=c=>`第${c.start}–${c.end}节`;
+  function drawDays(){document.querySelector('#days').innerHTML=weekdays.map((d,i)=>{let n=active().filter(c=>c.d===i).length;return `<button class="day ${i===selected?'active':''}" data-day="${i}"><span class="dow">${shortDays[i]}</span><span class="date">${n?`${n}门`:'—'}</span></button>`}).join('');document.querySelectorAll('.day').forEach(b=>b.onclick=()=>{selected=+b.dataset.day;draw()})}
+  function drawAgenda(){let list=active().filter(c=>c.d===selected).sort((a,b)=>a.start-b.start);document.querySelector('#dayTitle').textContent=weekdays[selected];document.querySelector('#courseCount').textContent=list.length?`${list.length} 门课程`:'轻松的一天';document.querySelector('#agenda').innerHTML=list.length?list.map(c=>`<article class="course"><div class="time"><b>${timeLabel(c)}</b>${c.start>=9?'晚上':c.start>=5?'下午':'上午'}</div><div class="course-body" style="--accent:${c.color}"><div class="course-top"><h3>${c.title}</h3><span class="room">⌖ ${c.room}</span></div><div class="meta"><span>${c.teacher}</span><i class="dot"></i><span>人工智能1班</span><span class="pill">第${c.weeks[0]}–${c.weeks[1]}周</span></div></div></article>`).join(''):`<div class="empty"><b>今天没有课程</b>留一点时间给自己吧</div>`}
+  function drawWeek(){document.querySelector('#weekView').innerHTML=shortDays.map((d,i)=>{let list=active().filter(c=>c.d===i).sort((a,b)=>a.start-b.start);return `<div class="week-col"><h4>${d}<span>${list.length} 门</span></h4>${list.map(c=>`<div class="mini"><b>${c.start}–${c.end}节 ${c.title}</b><small>${c.room}</small></div>`).join('')}</div>`}).join('')}
+  function draw(){drawDays();drawAgenda();drawWeek();document.querySelector('#weekNum').textContent=week;document.querySelector('#weekNote').textContent=week===7?'本周课程已为你筛选 · 第 7 周':`课程已切换至第 ${week} 周`;document.querySelector('#dayPanel').style.display=mode==='day'?'':'none';document.querySelector('#days').style.display=mode==='day'?'grid':'none';document.querySelector('#weekView').classList.toggle('show',mode==='week')}
+  document.querySelector('#prev').onclick=()=>{week=Math.max(1,week-1);draw()};document.querySelector('#next').onclick=()=>{week=Math.min(20,week+1);draw()};document.querySelector('#dayMode').onclick=()=>{mode='day';document.querySelector('#dayMode').classList.add('active');document.querySelector('#weekMode').classList.remove('active');draw()};document.querySelector('#weekMode').onclick=()=>{mode='week';document.querySelector('#weekMode').classList.add('active');document.querySelector('#dayMode').classList.remove('active');draw()};
+  const toast=document.querySelector('#toast');function showToast(s){toast.textContent=s;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1800)}document.querySelector('#todayNav').onclick=()=>{week=currentTeachingWeek();selected=0;mode='day';document.querySelector('#dayMode').click();showToast('已回到本周课表')};document.querySelector('#remindNav').onclick=()=>showToast('上课提醒：可在课程详情中开启');document.querySelector('#mineNav').onclick=()=>showToast('人工智能 1 班 · 研究生');draw();
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden){week=currentTeachingWeek();draw()}});
+  if('serviceWorker' in navigator) window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(()=>{}));
+</script>
+</body>
+</html>
